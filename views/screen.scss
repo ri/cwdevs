@@ -1,0 +1,369 @@
+@import 'mixins';
+
+$text-color: #393939;
+$light-text-color: lighten($text-color, 25%);
+$serif-font: "skolar";
+$sans-serif-font: "museo-sans-rounded";
+$text-width: 480px;
+$accent-color: #7F1949;
+
+.serif-light {
+	font-family: $serif-font;
+	font-weight: 300;
+}
+
+.serif-light-italic {
+	font-family: $serif-font;
+	font-style: italic;
+}
+
+.serif {
+	font-family: $serif-font;
+	font-weight: 400;
+}
+
+.serif-bold {
+	font-family: $serif-font;
+	font-weight: 600;
+}
+
+.sans-serif {
+	font-family: $sans-serif-font;
+	font-weight: 100;
+}
+
+body {
+ 	font-size: 18px;
+	padding-bottom: 40px;
+	@extend .serif-light;
+	
+	strong {
+		@extend .serif-bold;
+	}
+	
+	em {
+		@extend .serif-light-italic;
+	}
+}
+		
+a {
+	text-decoration: none;
+	@include transition(all, 0.2s);
+	color: $text-color;
+	
+	&:hover {
+		color: $accent-color;
+	}
+}
+
+header {
+	text-align: center;
+	margin-top: 20px;
+	
+	nav {
+		@extend .center;
+		border-top: 1px solid lighten($light-text-color, 30%);
+		border-bottom: 1px solid lighten($light-text-color, 30%);
+		max-width: $text-width;
+		font-size: 0.75em;
+		@extend .sans-serif;
+		
+		&, a {
+			color: $light-text-color;
+		}
+		
+		ul {
+			margin: 5px 0;
+			padding: 0;
+			text-align: center;
+		}
+		
+		li {
+			display: inline-block;
+			padding: 5px 6px;
+			
+			&:after {
+				content: "\00b7";
+				padding-left: 12px;
+			}
+			
+			&:last-child {
+				&:after {
+					content: "";
+				}
+			}
+		}
+	}
+	
+	object + nav {
+		margin-top: 1.75em;
+	}
+	
+	& + section {
+		margin-top: 2em;
+	}
+}
+
+section > h1, header h1 {
+	width: $text-width;
+	color: $light-text-color;
+	font-size: 0.75em;
+	padding-bottom: 1em;
+	margin-top: 0;
+	text-transform: uppercase;
+	@extend .sans-serif;	
+}
+
+section > h1 {
+	@extend .center;
+	@extend .push;
+}
+
+section {
+	header {
+		@extend .clearfix;
+		@extend .center;
+		@extend .push;
+		width: $text-width;
+		
+		h1 {
+			width: auto;
+		}
+		
+		.extra {
+			color: $light-text-color;
+			font-size: 0.75em;
+			a {
+				color: $light-text-color;	
+				&:hover {
+					color: $accent-color;
+				}
+			}
+		}
+	}
+}
+
+article, section#about, section#contact {
+	h1, h2, p, ul, ol, blockquote, footer{
+		@extend .center;
+		@extend .push;
+		max-width: $text-width;
+		line-height: 1.75em;
+		color: $text-color;
+	}
+	
+	.image-container {
+		text-align: center;
+		max-width: 100%;
+	}
+	
+	.image-caption {
+		display: block;
+		@extend .serif-italic;
+		font-style: italic;
+		font-size: 0.75em;
+		line-height: 1.5em;
+		color: $light-text-color;
+	}
+	
+	h1 {
+		font-size: 1.75em;
+		@extend .serif;
+		line-height: 1.5em;
+		& + p {
+			margin-top: 1em;
+		}
+	}
+	
+	h2 {
+		font-size: 1.5em;
+		padding-top: 1em;
+		padding-bottom: 0.25em;
+		line-height: 1.5em;
+		@extend .serif;
+	}
+	
+	ol, ul{
+		padding-top: 1em;
+		padding-bottom: 1em;
+		box-sizing: border-box;
+		
+		li {
+			left: 1em;
+			position: relative;
+			& + li {
+				margin-top: 0.75em;
+			}
+		}
+	}
+	
+	a {
+		color: $light-text-color;
+		&:hover {
+			color: $accent-color;
+		}
+	}
+	
+	p {
+		@extend .serif-light;
+		
+		& + p {
+			margin-top: 1.25em;
+		}
+		
+		.loud {
+			font-size: 1.25em;
+		}
+	}
+	
+	blockquote {
+		padding-left: 1em;
+		padding-right: 1em;
+		padding-top: 1em;
+		padding-bottom: 1em;
+		font-style: italic;
+		color: $light-text-color;
+		font-size: 1.25em;
+		box-sizing: border-box;
+		@extend .serif-light-italic;
+
+		&:before, &:after{
+			@extend .serif-bold;
+			font-size: 2em;
+			font-style: normal;
+			top: 0.25em;
+			position: relative;
+			color: lighten($text-color, 70%);
+		}
+		
+		
+		&:before{
+			content: '\201C';
+		}
+		
+		&:after {
+			content: '\201D';
+		}
+	}
+	
+	footer {
+		padding-top: 2em;
+		color: $light-text-color;
+		font-size: 0.75em;
+		font-style: italic;
+		@extend .serif-light-italic;
+		
+		a {
+			color: $light-text-color;
+		}
+		
+		.name {
+			color: $text-color;
+		}
+	}
+	
+	&.no-header {
+		margin-top: 1.25em;
+	}
+}
+
+#all-posts {
+	ul {
+		@extend .center;
+		@extend .push;
+		max-width: $text-width;
+		padding: 0;
+	}
+	
+	li {
+		list-style-type: none;
+		
+		& + li {
+			margin-top: 1.5em;
+		}
+	}
+}
+
+.center {
+	margin: 0 auto;
+}
+
+.text-width {
+	max-width: $text-width;
+}
+
+.left {
+	float: left;
+}
+
+.right {
+	float: right;
+}
+
+.clear {
+	clear: both;
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.row {
+	clear: both;
+}
+
+#about {
+	margin-top: 1em;
+ 	#self-image {
+		background: url('/images/ri-bg.jpg') center center;
+		background-size: cover;
+		height: 240px;
+		position: relative;
+		width: 100%;
+		margin-bottom: 1em;
+	
+		.image-container {
+			position: relative;
+			height:240px;
+			max-width: $text-width;
+		}
+	
+		img {
+			position: absolute;
+			bottom: 0;
+			right: 0;
+			text-align: left;
+		}
+	}
+}
+
+
+/* Images */
+#blog-process-image {
+	background: url('/images/blog/logo-process.jpg') no-repeat;
+	background-size: contain;
+	height: 80px;
+	width: 480px;
+	margin: 1em auto;
+	display: inline-block;
+	@extend .center;
+	@extend .full-image;
+}
+
+@media only screen and (max-width: 560px) {
+	.push {
+		padding-left: 15px;
+		padding-right: 15px;
+		width: auto;
+	}
+	
+	.full-image {
+		width: 100%;
+	}
+}
