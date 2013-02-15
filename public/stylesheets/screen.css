@@ -1,0 +1,5 @@
+body { font-size: 16px }
+header { background: url('/images/header-bg.jpg') top center; width: 100%; height: 280px; background-size: cover; position: relative; color: #f3eada; font-family: 'Quicksand', sans-serif}
+header nav { position: absolute }
+header h1 { height: 220px; width: 300px; background: url('/images/circle.png') top center; position: absolute; left: 50%; margin-left: -150px; top: 70px; text-align: center; padding-top: 80px; font-weight: 400}
+header h2 { width: 200px; position: absolute; left: 50%; margin-left: -150px; top: 90px; text-align: center; padding: 180px 50px 0 50px; font-weight: 100; font-size: 1.2em}
