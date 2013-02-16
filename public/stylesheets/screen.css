@@ -1,14 +1,17 @@
 body { font-size: 16px; font-family: 'Quicksand' sans-serif; background-color: #f3eada}
+body a { color: #318594; text-decoration: none}
 header { background: url('/images/header-bg.jpg') top center; width: 100%; height: 280px; background-size: cover; position: relative; color: #f3eada;}
 header nav { position: absolute }
 header h1 { height: 201px; width: 300px; background: url('/images/circle.png') top center; position: absolute; left: 50%; margin-left: -150px; top: 80px; text-align: center; padding-top: 100px; font-weight: 700; font-size: 1.75em}
 header h2 { width: 200px; position: absolute; left: 50%; margin-left: -150px; top: 95px; text-align: center; padding: 180px 50px 0 50px; font-weight: 100; font-size: 1.1em}
 .main { max-width: 800px; margin: 120px auto 0 auto;}
 .main #intro { width: 560px; float: left; padding: 40px 0 }
-.main #intro p { padding-right: 20px; }
+.main #intro p { padding-right: 40px; }
 .main #events { width: 240px; float: right; padding: 40px 0 }
 .main #events h1 { font-size: 1.2em }
 .main #events ul { margin: 0; padding: 0; list-style-type: none }
 .main #events ul ul { margin-bottom: 1em }
 .main #events ul ul li.date { font-weight: 800 }
 footer { clear: both; padding: 20px 0; background-color: #282726; color: #f3eada; font-weight: 300}
+footer:after { content: "."; display: block; clear: both; visibility: hidden; line-height: 0; height: 0; }
+footer a { float: right; margin-right: 2em;}
