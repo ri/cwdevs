@@ -18,7 +18,7 @@ header h2 { width: 200px; position: absolute; left: 50%; margin-left: -150px; to
 .second #events ul { margin: 0; padding: 0; list-style-type: none }
 .second #events ul ul { margin-bottom: 0.75em }
 .second #events ul ul li.date { font-weight: 400 }
-.second #events ul ul li a { font-weight: 300; }
+.second #events ul ul li a { font-weight: 300; font-size: 0.8em}
 .second #events a { font-weight: 700; color: inherit }
 .second #events a:hover { color: #c7b492 }
 footer { padding: 20px 0; background-color: #282726; color: #f3eada; font-weight: 300}
